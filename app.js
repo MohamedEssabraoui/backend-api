@@ -13,15 +13,10 @@ const cors = require('cors');
 
 app.use(helmet());
 
-const corsOptions = {
-    origin: 'https://kind-ocean-0918f2310.5.azurestaticapps.net',
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-    credentials: true,
-    optionsSuccessStatus: 204
-  };
 
-/*app.use(function(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
+
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", 'https://kind-ocean-0918f2310.5.azurestaticapps.net');
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, access-control-allow-origin");
     next();
 });
@@ -29,7 +24,7 @@ const corsOptions = {
 
  const corsOptions = {
     origin: '*'
-  } */
+  } 
 app.use(cors(corsOptions));
 app.use(expressValidator());
 
