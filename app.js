@@ -44,7 +44,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({secret:'express-session secret'}))
+app.use(session({secret:'express-session secret', resave: false, saveUninitialized: true}))
 
 //passport
 app.use(passport.initialize());
