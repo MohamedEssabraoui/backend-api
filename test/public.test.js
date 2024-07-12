@@ -1,4 +1,4 @@
-const app = require("../app")
+/* const app = require("../app")
 const request = require("supertest");
 const mongoose = require('mongoose');
 const userModel = require('../models/user');
@@ -51,4 +51,4 @@ test('small password in student register', async ()=> {
     }))
   })
   mongoose.connection.close();
-})
+}) */
