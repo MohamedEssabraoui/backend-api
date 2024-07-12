@@ -48,8 +48,7 @@
     "url": "git+https://github.com//backend.git"
   },
   "scripts": {
-    "start": "nodemon",
-    "test": "jest"
+    "start": "nodemon"
   },
   "version": "1.0.0"
 }
