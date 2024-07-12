@@ -48,7 +48,7 @@
     "url": "git+https://github.com//backend.git"
   },
   "scripts": {
-    "start": "nodemon"
+    "start": "node index.js"
   },
   "version": "1.0.0"
 }
