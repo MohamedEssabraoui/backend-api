@@ -37,7 +37,7 @@ var user = require('./routes/user');
 
 
 //configs
-//app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -54,9 +54,9 @@ app.use('/api/v1/adminlogin',adminLogin);
 app.use('/api/v1/admin',passport.authenticate('admin-token', {session:false}),admin);
 app.use('/api/v1/user',passport.authenticate('user-token', {session:false}),user);
 
-/* app.get('*', (req,res) =>{
+ app.get('*', (req,res) =>{
     res.sendFile(path.join(__dirname+'/public/index.html'));
-}); */
+}); 
 
 //error handlings
 app.use(function(req, res, next) {
@@ -72,11 +72,11 @@ app.use((err, req, res, next)=>{
 });
 
  //production script
-app.use(express.static("../frontend/build"));
+/* app.use(express.static("../frontend/build"));
 
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname,'frontend', 'build', 'index.html'));
-}); 
+});  */
 
 module.exports = app;
 
