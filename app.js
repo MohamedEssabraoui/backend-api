@@ -23,7 +23,7 @@ app.use(function(req, res, next) {
 
 
  const corsOptions = {
-    origin: '*'
+    origin: 'https://kind-ocean-0918f2310.5.azurestaticapps.net'
   } 
 app.use(cors(corsOptions));
 app.use(expressValidator());
