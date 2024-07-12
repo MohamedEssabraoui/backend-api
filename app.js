@@ -49,7 +49,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(session({secret:'express-session secret'}))
+app.use(session({ secret: 'express-session secret', resave: false, saveUninitialized: true }));
+//app.use(session({secret:'express-session secret'}))
 
 //passport
 app.use(passport.initialize());
@@ -73,7 +74,7 @@ app.use(function(req, res, next) {
 
 app.use((err, req, res, next)=>{
     console.log(err);
-    res.status(err.status).json({
+    res.status(err.status || 500).json({
         success : false,
         message : err.message
     });
