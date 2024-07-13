@@ -11,7 +11,11 @@ var passport = require("./services/passportconf");
 var app = express();
 const cors = require('cors');
 
-app.use(helmet());
+app.get('/', (req, res) => {
+    res.send('Hello World!')
+  })
+
+/* app.use(helmet());
 
 
 
@@ -73,7 +77,7 @@ app.use((err, req, res, next)=>{
         message : err.message
     });
 });
-
+ */
  //production script
 /* app.use(express.static("../frontend/build"));
 
